@@ -47,7 +47,7 @@ func GetCallerID(request *http.Request) int64 {
 		return 0
 	}
 	callerID, err := strconv.ParseInt(request.Header.Get(headerXCallerID), 10, 64)
-	if err == nil {
+	if err != nil {
 		return 0
 	}
 	return callerID
@@ -59,7 +59,7 @@ func GetClientID(request *http.Request) int64 {
 		return 0
 	}
 	clientID, err := strconv.ParseInt(request.Header.Get(headerXClientID), 10, 64)
-	if err == nil {
+	if err != nil {
 		return 0
 	}
 	return clientID
