@@ -1,2 +1,2 @@
-# bookstore_oauth-go
+# bookstore_oauth-lib
 OAuth library for the Go programming language
