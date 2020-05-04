@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/diegoclair/bookstore_oauth-go/errors"
+	"github.com/diegoclair/go_utils-lib/resterrors"
 	"github.com/federicoleon/golang-restclient/rest"
 	//"github.com/mercadolibre/golang-restclient/rest" this version doesn't work with golang >= 1.13, so we are use the federicoleon while wait for approve the federicoleon PR
 )
@@ -66,7 +66,7 @@ func GetClientID(request *http.Request) int64 {
 }
 
 //AuthenticateRequest authenticates the request
-func AuthenticateRequest(request *http.Request) *errors.RestErr {
+func AuthenticateRequest(request *http.Request) *resterrors.RestErr {
 	if request == nil {
 		return nil
 	}
@@ -100,24 +100,24 @@ func cleanRequest(request *http.Request) {
 	request.Header.Del(headerXCallerID)
 }
 
-func getAccessToken(accessTokenID string) (*accessToken, *errors.RestErr) {
+func getAccessToken(accessTokenID string) (*accessToken, *resterrors.RestErr) {
 	response := oauthRestClient.Get(fmt.Sprintf("/oauth/accesstoken/%s", accessTokenID))
 	if response == nil || response.Response == nil {
-		return nil, errors.NewInternalServerError("Invalid restclient response when trying to get access token")
+		return nil, resterrors.NewInternalServerError("Invalid restclient response when trying to get access token")
 	}
 
 	if response.StatusCode > 299 {
-		var restErr errors.RestErr
+		var restErr resterrors.RestErr
 
 		err := json.Unmarshal(response.Bytes(), &restErr)
 		if err != nil {
-			return nil, errors.NewInternalServerError("Error when trying to unmarshal the get access token response")
+			return nil, resterrors.NewInternalServerError("Error when trying to unmarshal the get access token response")
 		}
 		return nil, &restErr
 	}
 	var accessToken accessToken
 	if err := json.Unmarshal(response.Bytes(), &accessToken); err != nil {
-		return nil, errors.NewInternalServerError("Error when trying to unmarshal then access token response to accessToken struct")
+		return nil, resterrors.NewInternalServerError("Error when trying to unmarshal then access token response to accessToken struct")
 	}
 	return &accessToken, nil
 }
