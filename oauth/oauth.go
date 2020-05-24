@@ -22,7 +22,7 @@ const (
 )
 
 var oauthRestClient = rest.RequestBuilder{
-	BaseURL: "http://localhost:3001",
+	BaseURL: "http://micro_oauth:3001",
 	Timeout: 200 * time.Millisecond,
 }
 
