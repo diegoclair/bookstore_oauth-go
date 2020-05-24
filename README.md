@@ -1,2 +1,4 @@
 # go_oauth-lib
-OAuth library for the Go programming language
+## Description
+OAuth library for the Go programming language  
+This lib is used on bookstore microservice project
