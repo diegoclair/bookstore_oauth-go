@@ -1,9 +1,7 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/diegoclair/go_utils-lib v1.0.5 h1:Fh7TVMHkd7CU1kdporcEZXGlhsDpJ4YPFlPCXbpnYTE=
-github.com/diegoclair/go_utils-lib v1.0.5/go.mod h1:eCa15VCruDL3/+GY5VLHUCq+OAKIwZ9uL+cw8WqBYzA=
-github.com/federicoleon/golang-restclient v0.0.0-20191104170228-162ed620df66 h1:QESWlOIiziWcM4bCvtT7TFg4PXjudKMnO3ArjxuIJj4=
+github.com/diegoclair/go_utils-lib v1.0.6/go.mod h1:eCa15VCruDL3/+GY5VLHUCq+OAKIwZ9uL+cw8WqBYzA=
 github.com/federicoleon/golang-restclient v0.0.0-20191104170228-162ed620df66/go.mod h1:lvjF6h5LrES4h39ha/njlBBBqCmISh6BNSEiXH+mT5k=
 github.com/google/renameio v0.1.0/go.mod h1:KWCgfxg9yswjAJkECMjeO8J8rahYeXnNhOm40UhjYkI=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
