@@ -109,7 +109,7 @@ func getAccessToken(accessTokenID string) (*accessToken, resterrors.RestErr) {
 	if response.StatusCode > 299 {
 		var restErr resterrors.RestErr
 
-		err := json.Unmarshal(response.Bytes(), restErr)
+		err := json.Unmarshal(response.Bytes(), &restErr)
 		if err != nil {
 			return nil, resterrors.NewInternalServerError("Error when trying to unmarshal the get access token response")
 		}
